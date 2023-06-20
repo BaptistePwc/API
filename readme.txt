@@ -1,14 +1,19 @@
+Vous voici sur une API permettant de generer des questions.
+Retrouvez ci-dessous des exemples d'appel à l'api à l'aide de la methode curl à effectuer depuis votre terminal.
+
 ### Vérifier que l'API est fonctionnelle
 shell
-$ curl http://localhost:8000/
+curl http://localhost:8000/
 >>{"message":"Bienvenue sur votre API de question"}
 
 ### Créer une question
+shell
 curl -X POST -H "Content-Type: application/json" -u admin:4dm1N -d '{"question":"Quelle est la capitale de la France?", "subject":"Géographie", "correct":"Paris", "use":"QCM", "responseA":"Paris", "responseB":"Londres", "responseC":"Berlin"}' http://localhost:8000/questions
 >>{"message":"Question créée"}
 
 
 ### Obtenir des questions (ex 5 questions de test de validation à propos de l'Automation)
+shell
 $ curl -u alice:wonderland http://localhost:8000/questions?count=5&use="Test de validation"&subject="Automation"
 
 >>>
